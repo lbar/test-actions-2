@@ -18,7 +18,7 @@ jobs:
       - name: Checkout du code
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.ACTION_TOKEN }}
+          token: ${{ secrets.ACTIONS_TOKEN }}
 
       - name: Créer et pousser le tag
         run: |
