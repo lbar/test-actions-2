@@ -8,7 +8,7 @@ on:
         required: true
 
 env:
-  GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN_2 }}
 
 jobs:
   push-tag:
@@ -18,7 +18,7 @@ jobs:
       - name: Checkout du code
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.ACTIONS_TOKEN }}
+          token: ${{ secrets.ACTIONS_TOKEN_2 }}
 
       - name: Créer et pousser le tag
         run: |
