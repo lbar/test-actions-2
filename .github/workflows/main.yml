@@ -1,17 +1,21 @@
-name: Push tag
+name: Push Tag
 
 on:
-  push:
-    branches:
-
-permissions:
-  contents: write
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Nom du tag à pousser'
+        required: true
 
 jobs:
-  tag:
+  push-tag:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Push tag
+      - name: Checkout du code
+        uses: actions/checkout@v2
+
+      - name: Créer et pousser le tag
         run: |
-          git tag ${{ inputs.tag }}
-          git push origin ${{ inputs.tag }}
+          git tag ${{ github.event.inputs.tag }}
+          git push origin ${{ github.event.inputs.tag }}

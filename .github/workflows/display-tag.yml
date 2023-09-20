@@ -1,4 +1,4 @@
-name: Display tag
+name: Listen for Tags
 
 on:
   push:
@@ -6,9 +6,10 @@ on:
       - '*'
 
 jobs:
-  my-job:
+  listen-for-tags:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Print tag
+      - name: Afficher le tag
         run: |
-          echo "Le tag est $GITHUB_REF"
+          echo "Le tag poussé est ${{ github.ref }}"
