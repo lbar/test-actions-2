@@ -7,8 +7,8 @@ on:
         description: 'Nom du tag à pousser'
         required: true
 
-permissions:
-  contents: write
+env:
+  GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
 
 jobs:
   push-tag:

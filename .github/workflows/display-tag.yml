@@ -1,12 +1,12 @@
 name: Listen for Tags
 
 on:
-  workflow_run:
-    workflows: ["Push Tag"]
-    types: [completed]
   push:
     tags:
       - '*'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
 
 jobs:
   listen-for-tags:
