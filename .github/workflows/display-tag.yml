@@ -1,0 +1,14 @@
+name: Display tag
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print tag
+        run: |
+          echo "Le tag est $GITHUB_REF"

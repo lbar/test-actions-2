@@ -1,0 +1,17 @@
+name: Push tag
+
+on:
+  push:
+    branches:
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push tag
+        run: |
+          git tag ${{ inputs.tag }}
+          git push origin ${{ inputs.tag }}
